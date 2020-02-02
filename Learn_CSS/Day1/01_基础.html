@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title> 基础 </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: red; 
+		}
+
+		tr:nth-child(2n){
+			background-color: pink; 
+		}
+
+		tr:nth-child(odd){
+			background-color: skyblue;
+		}
+
+		tr:last-child{
+			background-color: #ccc;
+		}
+
+		table{
+			border-collapse: collapse;
+		}
+
+		td *{
+			line-height: 100%;
+		}
+/*
+		ul {
+			list-style: none; 
+		}
+		div	{
+			background-color: pink;
+			margin-top: 20px;
+		}
+
+		li {
+			float: left;
+			margin: 10px;
+
+		}*/
+	</style>
+</head>
+<body>
+	<h4>注册页面</h4>
+	<table width="800px" border="1px">
+		<tr>
+			<td> 性别 </td>
+			<td> 
+				<input type="radio" name="sex" id = "nan" value="man"> <label for = "nan"><img src="../images/logo.png" width="30px"> 男</label>
+				<input type="radio" name="sex" id = "nv" value="woman">  <label for = "nv"><img src="../images/logo.png" width="30px"> 女</label>
+			</td>
+		</tr>
+
+		<tr>
+			<td>生日 </td>
+			<td>
+				<select name="birthday">
+					<option>year</option>
+					<option selected="selected">1995</option>
+				</select>
+				<select>
+					<option>month</option>
+					<option>1</option>
+				</select>
+				<select>
+					<option>day</option>
+					<option>1</option>
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<td> <label for = "area">所在地区</label> </td>
+			<td>
+				<input type="text" name="area" id = "area">
+			</td>
+		</tr>
+
+		<tr>
+			<td>婚姻状况</td>
+			<td>
+				<input type="radio" name="marry" value= 1> 已婚
+				<input type="radio" name="marry" value= 0> 未婚
+			</td>
+		</tr>
+
+		<tr>
+			<td>喜欢类型</td>
+			<td>
+				<input type="checkbox" name="likes" value= 0 id = "cute"> <label for = "cute">可爱的</label>
+				<input type="checkbox" name="likes" value= 1 id = "pretty"> <label for = "pretty">漂亮的</label>
+				<input type="checkbox" name="likes" value= 2 id = "high"> <label for = "high">高高的</label>
+			</td>
+		</tr>
+
+		<tr>
+			<td><label for ="aboutme">自我介绍</label></td>
+			<td>
+				<textarea name = "aboutme" placeholder="自我介绍" id = "aboutme"></textarea>
+			</td>
+		</tr>
+
+		<tr>
+			<td rowspan="4"></td>
+			<td>
+				<input type="submit" name="submit" value="免费注册">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="sure" checked="checked"> 已同意并阅读用户须知
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<a href="#">立即注册</a>
+				<a href="#">我是会员</a>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<dl>
+					<dt> 我承诺 </dt>
+					<dd> 年满18岁 </dd>
+					<dd> 内容真实可靠</dd>
+				</dl>
+			</td>
+		</tr>
+	</table>
+
+
+</body>
+</html>
