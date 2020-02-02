@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>盒子案例</title>
+    <meta charset="utf8">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            /*box-sizing: border-box;*/
+        }
+
+        body {
+            background-color: #ccc;
+        }
+
+        .outer {
+            width: 222px;
+            height: 357px;
+            background-color: white;
+            margin: 100px auto;
+            border: 2px solid red;
+            transition: all ease 0.2s;
+        }
+
+
+        .outer img {
+            width: 100%;
+        }
+
+        .about {
+            padding: 0 17px;
+            font-size: 10px;
+            overflow: hidden;
+            margin: 11px 0;
+        }
+
+        .price {
+            margin-top: 28px;
+            padding: 0 17px;
+            background-color: yellow;
+            background-image: url(./images/shop.png);
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+
+        .price p {
+            line-height: 43px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            transition: all ease 0.2s;
+        }
+
+        .outer:hover {
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .about a:hover {
+            color: orange;
+            text-decoration: underline;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="outer">
+        <a href="#"><img src="./images/icon.jpg" alt="模特"></a>
+        <div class='about'>
+            <a href="#">恩曼琳2020年春新收腰隐拉钉珠装饰透视飘逸A字女半身裙EANAAG06 黑色 S</a>
+        </div>
+        <div class="price">
+            <p>888</p>
+        </div>
+    </div>
+</body>
+
+</html>

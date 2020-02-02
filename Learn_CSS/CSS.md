@@ -394,4 +394,24 @@ id 选择器 | 0 1 0 0
 
 	- box-sizing 属性控制盒子的模型
 
-	- 
++ box-sadow： 盒子阴影
+
+	- box-shadow: 水平位移 垂直位移 模糊范围 阴影尺寸 阴影颜色 inset/outset
+
++ text-shadow: 文字阴影
+
+#### 浮动
+
++ 网页布局方式： 浮动 display: float
+
+	- **元素脱离标准流**, <font color="red">但是不会覆盖内容</font>
+
+	- **在一行内显示**
+
+	- **浮动的元素具有行内块元素的特性**，<font color="red"> 可以省略 display: inline-block/block 属性</font>
+
++ 在按照标准流排布的父级元素中放置 float 元素
+
++ <font color="red"> 块级元素纵向排布需要使用标准流， 水平方向需要使用浮动</font>
+
++ 清除浮动

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>float 实现经典布局</title>
+    <meta charset="utf8">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .outer {
+            width: 1300px;
+            margin: 0 auto;
+        }
+
+        .header {
+            height: 100px;
+            background-color: pink;
+        }
+
+        .left {
+            float: left;
+            background-color: #ccc;
+            width: 300px;
+            height: 800px;
+        }
+
+        .right {
+            float: left;
+            background-color: cyan;
+            width: 1000px;
+            height: 800px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .right li {
+            background-color: skyblue;
+            margin: 10px 0;
+            margin-left: 20px;
+            height: 100px;
+            width: 175px;
+            float: left;
+            transition: all ease 0.2s;
+        }
+
+        .right li:nth-child(5n) {
+            margin-right: 20px;
+        }
+
+        li:hover {
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="header"></div>
+        <div class="main">
+            <div class="left"></div>
+            <div class="right">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

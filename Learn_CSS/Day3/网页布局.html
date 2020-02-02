@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> 常见网页布局</title>
+    <meta charset="utf8">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav {
+            height: 50px;
+            background-color: purple;
+        }
+
+        .main {
+            margin: 10px auto;
+            height: 800px;
+            width: 1200px;
+            background-color: #ccc;
+        }
+
+        .footer {
+            height: 200px;
+            background-color: pink;
+        }
+
+        .phone {
+            height: 200px;
+        }
+
+        .phone li {
+            list-style: none;
+            width: 280px;
+            height: 180px;
+            margin: 10px;
+            float: left;
+        }
+
+        li:nth-child(odd) {
+            background-color: blue;
+        }
+
+        li:nth-child(2n) {
+            background-color: red;
+        }
+
+        .usage {
+            height: 400px;
+        }
+
+        .usage .left,
+        .usage .right {
+            float: left;
+            height: 380px;
+            margin: 10px;
+            width: 280px;
+            background-color: pink;
+        }
+
+        .usage .right {
+            width: 880px;
+            background-color: yellow;
+        }
+
+        .computer {
+            height: 200px;
+        }
+
+        .computer .c1,
+        .computer .c2 {
+            float: left;
+            width: 580px;
+            height: 180px;
+            margin: 10px;
+            background-color: black;
+        }
+
+        .c2 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">1</div>
+    <div class="main">
+        <div class="phone">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+        <div class="usage">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+        <div class="computer">
+            <div class="c1"></div>
+            <div class="c2"></div>
+        </div>
+    </div>
+    <div class="footer">3</div>
+</body>
+
+</html>
