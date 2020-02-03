@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>学成在线项目</title>
+    <meta charset="utf8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+
+        .header {
+            height: 100px;
+            margin: 0 auto;
+            padding-top: 30px;
+            background-color: #ccc;
+        }
+
+        .header .left {
+            float: left;
+        }
+
+        .header li {
+            float: left;
+            margin: 0 20px;
+            line-height: 40px;
+        }
+
+        .header a:hover {
+            color: red;
+            border-bottom: 1px solid cyan;
+        }
+
+        .header li:first-child a {
+            display: inline-block;
+            width: 195px;
+            height: 42px;
+            background: url(../../images/logo.png) no-repeat pink;
+        }
+
+        .header .right {
+            float: right;
+        }
+
+        .header .right * {
+            float: right;
+            line-height: 40px;
+        }
+
+        .header .right .search {
+            height: 40px;
+            border: 1px solid cyan;
+            margin-right: 30px;
+        }
+
+        .header .right .icon {
+            width: 40px;
+            height: 40px;
+            background-color: blue;
+        }
+
+        .header input {
+            width: 361px;
+            height: 100%;
+            box-sizing: border-box;
+            padding-left: 10px;
+            border: 0;
+        }
+
+        .banner {
+            height: 420px;
+            background: url(../../images/bgi.jpg) no-repeat center;
+            background-color: lightblue;
+        }
+
+        .banner .sidebar {
+            float: left;
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 100%;
+            width: 190px;
+            padding-left: 20px;
+        }
+
+        .sidebar a {
+            line-height: 40px;
+            width: 170px;
+        }
+
+        .sidebar a span {
+            float: right;
+            margin-right: 20px;
+        }
+
+        .banner .table {
+            float: right;
+            width: 228px;
+            height: 300px;
+            margin: 60px 0;
+            background-color: #fff;
+        }
+
+        .table h3 {
+            text-align: center;
+            line-height: 50px;
+            background-color: cyan;
+        }
+
+        h3 a {
+            color: white;
+        }
+
+        .table ul {
+            margin: 0 20px;
+        }
+
+        .table li {
+            border-bottom: 1px solid cyan;
+            height: 60px;
+            padding: 6px 0 0 0;
+            font-size: 14px;
+        }
+
+        .table li:nth-child(3) {
+            border: 0;
+        }
+
+        .table li:last-child {
+            border: 1px solid cyan;
+            height: 40px;
+            text-align: center;
+        }
+
+        .main {
+            width: 1185px;
+            background-color: #ccc;
+            margin: 30px auto;
+        }
+
+        .main li {
+            position: relative;
+            float: left;
+            height: 270px;
+            width: 225px;
+            background-color: pink;
+            margin: 0 15px 15px 0;
+            transition: all ease 0.2s;
+        }
+
+        .main li img {
+            position: absolute;
+            right: -5px;
+            top: 5px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .main li:nth-child(5n) {
+            margin-right: 0;
+        }
+
+        .main li:hover {
+            margin-top: -2px;
+            margin-bottom: 17px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer {
+            height: 420px;
+            background-color: yellow;
+        }
+
+        .fix {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: 600px;
+        }
+
+        .fix img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="left">
+            <ul>
+                <li><a href="#"></a></li>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">课程</a></li>
+                <li><a href="#">职业规划</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <a href="#">个人中心</a>
+            <div style="height: 20px; width: 20px; background-color: #000;"></div>
+            <a href="#">刘德华</a>
+            <div style="height: 20px; width: 20px; background-color: #000;"></div>
+            <div class="search">
+                <div class="icon"></div>
+                <input type="text" placeholder="搜索">
+            </div>
+        </div>
+    </div>
+    <div class="fix">
+        <img src="../../images/logo.png" alt="">
+    </div>
+    <div class="banner">
+        <div style="height: 420px; width: 1200px; margin: 0 auto;">
+            <div class="sidebar">
+                <ul>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                </ul>
+            </div>
+            <div class="table">
+                <h3><a href="#">我的课表</a></h3>
+                <ul>
+                    <li><a href="#">继续学习 编程语言设计
+                            正在学习-面向对象</a></li>
+                    <li><a href="#">继续学习 编程语言设计
+                            正在学习-面向对象</a></li>
+                    <li><a href="#">继续学习 编程语言设计
+                            正在学习-面向对象</a></li>
+                    <li><a href="#">全部课程</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main clearfix">
+        <ul>
+            <li>1
+                <img src="../../images/logo.png" alt="">
+            </li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+        </ul>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>

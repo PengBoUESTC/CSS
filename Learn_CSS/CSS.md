@@ -414,4 +414,84 @@ id 选择器 | 0 1 0 0
 
 + <font color="red"> 块级元素纵向排布需要使用标准流， 水平方向需要使用浮动</font>
 
-+ 清除浮动
+##### 清除浮动
+
++ <font color="red">清除浮动</font>： **父级元素高度不定，由于子元素浮动会脱标，因此父元素高度会变为0**
+
+	- 额外标签法: 在浮动的元素之后添加 属性为 clear: both 的**块元素标签**，撑开父级盒子高度
+	~~~css
+	.clear {
+		clear: both;
+		<!-- 添加该属性的元素将浮动元素作为普通元素 -->
+	}
+	~~~
+
+	- 父级元素添加 overflow: hidden | auto | scroll
+
+	- <font color="red">父级元素添加 after 伪元素</font>
+	~~~css
+	.clearfix:after {
+		content: "";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	.clearfix {
+		\*zoom: 1
+	}
+	~~~
+
+	- <font color="red">父级元素添加 after before 双伪元素</font>: table 为一个块元素，高度有内容决定，content为空，因此高度为0，即变相的引入一个高度为0 的块元素
+	~~~css
+	.clearfix:after, .clearfix:before {
+		content: "";
+		display: table;
+	}
+	.clearfix:after {
+		clear: both;
+	}
+	.clearfix {
+		\*zoom: 1;
+	}
+	~~~
+
+#### 定位
+
++ (position)定位方式+ 边偏移（top bottom left right）
+
++ 
+定位方式 | 效果 | 说明
+-|-|-
+static | 标准流 | 
+relative | 相对定位 | 相对自身位置进行偏移，**不会脱离标准流**
+absolute | 绝对定位 | 相对**最近一级使用定位的父级**元素定位，否则以浏览器为标准
+fixed | 固定定位 | 相对于窗口定位,脱离标准流
+sticky | 粘性定位 | 不脱标，相对窗口定位，需要边偏移的至少一个参数
+
+##### 定位的应用
+
++ <font color="red"> **子绝父相** </font>： 子元素使用绝对定位，父级元素使用 相对定位
+
++ **fixed 定位到版心的右侧： left: 50%; margin-left: 版心宽度/2；**
+
++ sticky ：当元素相对窗口达到边偏移设定值时表现为固定定位
+
++ 定位的叠放顺序： z-index 属性
+
++ 定位实现垂直居中: 绝对定位的元素不能通过 margin: 0 auto; 实现居中
+~~~css
+.box {
+	position: absolute;
+	top: 50%;
+	margin-top: -height/2;
+}
+~~~
+
++ **注意**
+
+	- <font color="red"> 为行内元素添加绝对定位或固定定位后，可直接设定 width 于 height 属性，无需在设置 display 属性</font>
+
+	- <font color="red"> 块元素设置 绝对/固定 定位后的默认大小靠内容撑开</font>
+
+	- <font color="red"> 脱标元素不会触发外边距塌陷的 </font>
