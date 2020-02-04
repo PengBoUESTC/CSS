@@ -100,6 +100,31 @@ p {
 }
 ~~~
 
++ <font color="red">属性选择器</font>
+~~~css
+input[value] {
+	color : red;
+	<!-- input 标签中定义了 value 属性的元素 -->
+}
+
+imput[type=password] {
+	<!-- 根据属性及属性值选择元素 -->
+}
+
+<!-- 结合正则表达选取元素 -->
+input[class^=icon] {
+	<!-- 选取类名以 icon 开头的元素 -->
+}
+
+input[class$=data] {
+	<!-- 选择以 data  结尾的元素 -->
+}
+
+input[class* = val] {
+	<!-- 包含 val 的元素 -->
+}
+~~~
+
 ##### 复合选择器
 
 + 并集选择器
@@ -128,9 +153,33 @@ ul, ol {
 	}
 	~~~
 
-	- 结构伪类
+	- 结构伪类 : first-child last-child nth-child(n), first-of-type last-of-type nth-of-type
+	~~~css
+	<!-- child 会把所有的元素都排列序号，选择器从后往前执行 -->
+	<!-- type 会把指定的元素排列序号，选择器从前往后执行 -->
+		li:first-child {}
+		li:nth-child(2n) {}
+		li:nth-child(2n+1){}
+		li:nth-child(odd){}
+	~~~
+
 
 + 伪元素选择器
+
+	- <font color="red">通过 CSS 创建一个标签</font> 简化HTML 结构
+
+	- <font color="red">通过与定位结合实现字体图标的添加</font>
+
+	- ::before
+
+	- ::after
+
+	- 应用 : **清除浮动，添加效果**
+	~~~css
+	li:hover::after{
+		<!-- 添加属性 -->
+	}
+	~~~
 
 + 子选择器: <font color="red">只选择孩子一级</font>
 ~~~css
@@ -344,7 +393,7 @@ ul li {
 - | -
 **继承或者 \*** | 0 0 0 0
 标签选择器 | 0 0 0 1
-类选择器，伪类选择器 | 0 0 1 0
+类选择器，伪类选择器，属性选择器 | 0 0 1 0
 id 选择器 | 0 1 0 0
 行内样式 | 1 0 0 0 
 !important | ∞
@@ -354,6 +403,8 @@ id 选择器 | 0 1 0 0
 #### 盒子模型
 
 <img src="./images/box-model.gif" height="200px" style="float: left">
+
++ <font color="red">box-sizing 属性更改 盒子模型</font>
 
 + <font color="red">默认情况下 盒子的 weight 与 height 属性指定的是 content 的大小</font>
 
@@ -495,3 +546,112 @@ sticky | 粘性定位 | 不脱标，相对窗口定位，需要边偏移的至�
 	- <font color="red"> 块元素设置 绝对/固定 定位后的默认大小靠内容撑开</font>
 
 	- <font color="red"> 脱标元素不会触发外边距塌陷的 </font>
+
+#### 元素的隐藏于显示
+
++ display
+
+	- display: none 隐藏元素，并不占有原来的位置
+
++ visibility
+
+	- visibility: inherit | hidden | visible | collapse: 隐藏元素，仍保留原有位置
+
++ overflow
+
+	- overflow: hidden | scroll 多出盒子的部分内容隐藏/滚动条
+
+
+#### CSS 高级技巧
+
+##### 精灵图(sprites)
+
++ **减少前端对后台的请求次数**，将大多数背景图片制作在一张背景透明的精灵图中，并通过 background-position 进行控制选择
+
+##### 字体图标
+
++ 精灵图更改不方便，将一些图标做成字体使用，减少图片的请求与使用; **放大不失真，轻量，灵活，兼容性好**，<font color="red">用于制作简单的背景小图标</font>
+
++ 使用方式
+	
+	- 制作/下载字体图标
+
+	- 通过 @font-face 定义字体
+
+	- 为使用了字体图标的标签添加定义的字体
+
++ 通过导入 ```selection.json``` 文件导入已选择的字体图标，进行字体图标的追加
+
+##### CSS 三角
+
++ 通过控制边框的**颜色与宽度**制作三角形
+
+#### 用户界面样式
+
++ 鼠标样式
+	
+参数| 样式
+-|-
+default | 默认小白
+pointer | 小手
+move | 拖动
+text | 光标
+not-allowed | 禁止
+
++ 表单轮廓与防止拖拽文本域
+
+	- outline : none;
+
+	- resize: none;
+
++ **vertical-align**: 用于实现图片与文字的垂直对齐，<font color="red">只针对行内元素或者行内块元素起效，为img、表单元素 添加</font>
+参数|说明
+-|-
+baseline|文字基线对齐
+top|顶部对齐
+middle|居中对齐
+bottom|底部对齐
+
+	- img 默认是基线对齐，因此会与边框底部有小缝隙，该属性可消除图片与区域之间的空白缝隙
+
++ <font color="red"> 溢出文本省略号显示 </font>
+
+	- 单行文本
+	~~~css
+	{
+		white-space: nowrap
+		overflow: hidden;
+		text-overflow:ellipsis;
+	}
+	~~~
+
+	- 多行文本
+
++ <font color="red">margin 负值的应用</font>
+
+	- 控制相邻盒子边框的重叠
+	~~~css
+	li {
+		border: 1px solid red;
+		margin-left: -1px;
+	}
+	~~~
+
+	- 添加 position: relative 属性，防止边框被遮挡
+	~~~css
+	li:hover {
+		position: relative;
+		z-index: 1;
+		border: 1px solid blue;
+	}
+	~~~
+
+#### CSS3新特性
+
++ 新书幸福 ```filter ： blur(15px)``` : 用于图像的处理 blur 为模糊处理
+
++ ```calc(100% -30px)``` : 哦那个过计算得到需要的值
+
+##### 过度
+
++ transition

@@ -355,3 +355,83 @@
 	<option>3</option>
 </select>
 ~~~
+
+#### HTML5 新增标签
+
++ head nav artical aside footer section
+
+##### 视频标签 video
+
++ 支持的视频格式
+
+	- MP4:浏览器兼容性最好
+
+	- webm
+
+	- ogg
+
++ 应用
+~~~html
+<video controls>
+<!-- 可通过source 标签引入多张视频格式用于兼容性的优化 -->
+	<source src="xx.mp4" type="">
+	<source src="xxx.ogg" type="">
+	<source src="xxx.webm" type="">
+</video>
+~~~
+
++ 相关属性
+属性 | 值| 说明
+-|-|-
+controls | controls | 视频的控制按钮
+autoplay | autoplay | 打开自动播放，谷歌禁止自动播放需要额外添加 muted 属性
+muted | muted| 静音播放
+loop | loop | 循环播放
+preload  | auto 、 none | 是否预加载视频，若有autoplay 则忽略该属性
+poster | ulr | 界面图片
+
+##### 音频标签 audio
+
++ 格式
+
+	- mp3 : 兼容性最好
+
+	- wav
+
+	- ogg
+
++ 应用
+~~~html
+<audio>
+	<!-- 与video 类似的解决兼容性问题 -->
+	<source src="xx.mp3" type="">
+</audio>
+~~~
+
++ 属性
+属性 | 值| 说明
+-|-|-
+controls | controls | 
+autoplay | autoplay | 
+loop | loop | 
+
+##### 表单
+
++ **input 新增的 type 类型**
+type | 说明
+-|-
+number | 数字
+color | 颜色
+search | 搜索框
+email | 
+tel | 手机号
+url | 
+... | 
+
++ 表单新增属性
+属性 | 值 | 说明
+-|-|-
+required | required | 不能为空的元素
+autofocus | autofocus | 自动获取焦点
+placeholder | strig 文本 | 添加默认内容
+autotemplate | on 、 off | 是否记录提交成功的内容,默认为 on 

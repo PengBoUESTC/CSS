@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>通过 border 制作 三角形</title>
+    <meta charset="utf8">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .outer {
+            width: 112px;
+            position: relative;
+            float: right;
+            margin-right: 2px;
+            display: none;
+
+        }
+
+        .tri {
+            width: 0px;
+            height: 0px;
+            border: 10px solid transparent;
+            border-right: 0px;
+            border-left-color: red;
+
+            position: absolute;
+            right: 0px;
+            top: 5px;
+        }
+
+        .main {
+            height: 100px;
+            width: 100px;
+            background-color: black;
+        }
+
+        .sidebar {
+            height: 300px;
+            width: 50px;
+            background-color: pink;
+            float: right;
+            cursor: pointer;
+        }
+
+        .sidebar:hover+.outer {
+            display: block;
+        }
+
+        .vertical {
+            width: 500px;
+            height: 200px;
+            float: left;
+        }
+
+        .vertical img {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar"></div>
+    <div class="outer">
+        <div class="main">
+            <img src="../images/logo.png" alt="" style="width: 100px;">
+        </div>
+        <div class="tri"></div>
+    </div>
+
+    <div class="vertical">
+        <img src="../images/logo.png" alt="" style="height:100%"> <span>12333333333</span>
+    </div>
+
+
+</body>
+
+</html>

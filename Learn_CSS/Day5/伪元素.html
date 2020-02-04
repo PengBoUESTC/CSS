@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>伪元素</title>
+    <meta charset="utf8">
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        div::after {
+            transition: all ease 0.5s;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+
+        div:hover::after {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <img src="../images/logo.png" alt="">
+    </div>
+</body>
+
+</html>
