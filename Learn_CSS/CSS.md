@@ -517,7 +517,7 @@ id 选择器 | 0 1 0 0
 static | 标准流 | 
 relative | 相对定位 | 相对自身位置进行偏移，**不会脱离标准流**
 absolute | 绝对定位 | 相对**最近一级使用定位的父级**元素定位，否则以浏览器为标准
-fixed | 固定定位 | 相对于窗口定位,脱离标准流
+fixed | 固定定位 | 相对于 <font color="yellow">**body**</font> 定位,脱离标准流
 sticky | 粘性定位 | 不脱标，相对窗口定位，需要边偏移的至少一个参数
 
 ##### 定位的应用
@@ -527,6 +527,8 @@ sticky | 粘性定位 | 不脱标，相对窗口定位，需要边偏移的至�
 + **fixed 定位到版心的右侧： left: 50%; margin-left: 版心宽度/2；**
 
 + sticky ：当元素相对窗口达到边偏移设定值时表现为固定定位
+
+	- <font color="yellow"> sticky 为相对父级元素的定位，不一定是 body 元素</font>
 
 + 定位的叠放顺序： z-index 属性
 
@@ -546,6 +548,56 @@ sticky | 粘性定位 | 不脱标，相对窗口定位，需要边偏移的至�
 	- <font color="red"> 块元素设置 绝对/固定 定位后的默认大小靠内容撑开</font>
 
 	- <font color="red"> 脱标元素不会触发外边距塌陷的 </font>
+
+##### fixed 元素的居中显示
+
++ **由于该元素相对于 body 元素定位，因此可通过设置 body 水平居中，并使该元素宽度为 100%**
+~~~css
+body {
+	width: 100%;
+	min-width: 320px;
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+.fixed {
+	width: 100%;
+	min-width: 320px;
+	max-width: 720px;
+	height: 50px;
+	position: fixed;
+}
+~~~
+
++ 通过 left 值与 tranform 属性进行位置控制
+~~~css
+.fixed {
+	width: 100%;
+	min-width: 320px;
+	max-width: 720px;
+	position: fixed;
+	<!-- 距离左侧屏幕的 50% -->
+	left: 50%;
+	<!-- 再偏移自身宽度的 50% -->
+	transform: translateX(-50%);
+}
+~~~
+
++ 通过同时设置 left right 与 margin 实现水平居中
+~~~css
+.fixed {
+	position: fixed;
+	left: 0;
+	right: 0;
+	magin: 0 auto;
+	width: 100%;
+	min-width: 320px;
+	max-width: 720px;
+	height: 50px;
+}
+~~~
+
++ 同上，可实现 fix 元素的 垂直居中
 
 #### 元素的隐藏与显示
 
