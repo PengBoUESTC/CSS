@@ -1,0 +1,209 @@
+body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 720px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+    font-size: 12px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+.clearfix::after{
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+header {
+    width: 100%;
+    height: 40px;
+}
+
+/* 搜索框 */
+/* fixed 的盒子需要设置宽高，同时为了缩放，设置min-width max-width width 通过百分比设置 */
+.search {
+    position: sticky;
+    top: 0;
+    height: 44px;
+    width: 100%;
+    min-width: 320px;
+    max-width: 720px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.search .search-btn {
+    position: absolute;
+    left:0;
+    top:0;
+    width: 40px;
+    height: 44px;
+    background-color: red;
+}
+
+.search .search-btn::after {
+    content: '';
+    display: block;
+    height: 44px;
+    width: 40px;
+    background: url(../images/search-btn.png) no-repeat 10px center;
+    background-size: 50%;
+}
+
+.search .search-login {
+    position: absolute;
+    right:0;
+    top:0;
+    background-color: red;
+    height: 24px;
+    width: 40px;
+    padding: 10px 0;
+}
+
+
+.search-input {
+    box-sizing: border-box;
+    height: 44px;
+    width: 100%;
+    padding: 0 50px;
+    background-color: red;
+}
+
+.search-input .search-content {
+    position: relative;
+    margin-top: 7px;
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.search-input .search-content .jd {
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top : 0;
+    background: url(../images/JD.png) no-repeat;
+    background-position: 7px;
+    background-size: 20px 15px;
+}
+
+.search-input .search-content .jd:after {
+    content: '';
+    display: block;
+    height: 20px;
+    width: 2px;
+    background-color: red;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+
+
+/* 使用2倍图 技术，将精灵图先缩小一倍，再计算坐标 */
+.search-input .search-content .search-icon {
+    position: absolute;
+    top: 7px;
+    left: 70px;
+    width: 16px;
+    height: 16px;
+    background: url(../images/jd-sprites.png) no-repeat;
+    background-position: -83px 0;
+    background-size: 200px 200px;
+}
+
+.search-input .search-content input {
+    position: absolute;
+    left: 100px;
+    outline: none;
+    padding: 0;
+    height: 30px;
+    width:calc(100% - 150px);
+    border: 0;
+}
+
+/* 主体部分 */
+.main {
+    height: 2000px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.main .lunbo {
+    position: relative;
+    padding-top:10px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: red;
+    border-radius: 0 0 30px 30px;
+    overflow: hidden;
+}
+
+.main .lunbo img {
+    width: 95%;
+}
+
+.main .lunbo ul {
+    height: 12px;
+    width: 80px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 5px;
+    left:calc(50% - 25px) ;
+}
+
+.main .lunbo li {
+    width: 8px;
+    height: 8px;
+    float: left;
+    background-color: gray;
+    border-radius: 4px;
+    margin: 2px 4px;
+}
+
+/* 导航栏 */
+.main nav a {
+    text-align: center;
+    float: left;
+    width: 20%;
+    height: 80px;
+    padding: 20px 0 0 0;
+}   
+.main nav span {
+    display: block;
+}
+.main nav img {
+    height: 43px;
+    width: 43px;
+}
+
+.main .news .left,
+.main .news .right {
+    float: left;
+    width: 50%;
+}
+
+.news img{
+    width: 100%;
+}
